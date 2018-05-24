@@ -7,7 +7,7 @@ public class Snake extends JFrame
 {
 	public Snake()
 	{
-		initUI();
+		initUI();//have some more problems i need to deal with
 	}
 	private void initUI()
 	{
