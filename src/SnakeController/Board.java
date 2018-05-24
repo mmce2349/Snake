@@ -76,6 +76,51 @@ public class Board extends JPanel implements ActionListener
 		gameTimer.start();
 	}
 	
+	@Override
+	public void paintComponent(Graphics game)
+	{
+		super.paintComponent(game);
+		doDrawing(game);
+	}
+	
+	private void doDrawing(Graphics game)
+	{
+		if(inGame)
+		{
+			game.drawImage(apple, appleX, appleY, this);
+			
+			for(int z=0; z < dots; z++)
+			{
+				if(z==0) 
+				{
+					game.drawImage(head, x[z], y[z], this);
+				}
+				else
+				{
+					game.drawImage(ball, x[z], y[z],  this);
+				}
+			}
+			Toolkit.getDefaultToolkit().sync();
+		}
+		else
+		{
+			gameOver(game);
+		}
+		
+	}
+	
+	private void gameOver(Graphics game)
+	{
+		String message = "Game over loser";
+		Font small = new Font("Helvetica", Font.BOLD, 14);
+		FontMetrics metr = getFontMetrics(small);
+		
+		game.setColor(Color.RED);
+		game.setFont(small);
+		game.drawString(message, (boardWidth- metr.stringWidth(message)) / 2, boardHeight / 2);
+	}
+	
+	
 	
 	
 }
