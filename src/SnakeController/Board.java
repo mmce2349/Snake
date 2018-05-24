@@ -189,6 +189,31 @@ public class Board extends JPanel implements ActionListener
 		}
 	}
 	
+	private void locateApple()
+	{
+		int location = (int) (Math.random() *randomPosition);
+		appleX = ((location * dotSize));
+		
+		location = (int)(Math.random() * randomPosition);
+		appleY = ((location * dotSize));
+		
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		if(inGame)
+		{
+			checkApple();
+			checkCollision();
+			move();
+		}
+		repaint();
+	}
+	private class TAdapter extends KeyAdapter
+	{
+		
+	}
 	
 	
 	
