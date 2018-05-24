@@ -120,6 +120,43 @@ public class Board extends JPanel implements ActionListener
 		game.drawString(message, (boardWidth- metr.stringWidth(message)) / 2, boardHeight / 2);
 	}
 	
+	private void checkApple()
+	{
+		if((x[0] == appleX) && (y[0] == appleY))
+		{
+			dots++;
+			locateApple();
+		}
+	}
+	
+	private void move()
+	{
+		for(int z = dots; z > 0; z --)
+		{
+			x[z] = x[(z-1)];
+			y[z] = y[(z-1)];
+			
+		}
+		if(leftDirection) 
+		{
+			x[0]-= dotSize;
+			
+		}
+		if(rightDirection)
+		{
+			x[0]+= dotSize;
+		}
+		if(upDirection)
+		{
+			y[0] -= dotSize;
+			
+		}
+		if(downDirection)
+		{
+			y[0] += dotSize;
+		}
+	}
+	
 	
 	
 	
