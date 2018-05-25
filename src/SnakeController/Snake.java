@@ -2,7 +2,7 @@ package SnakeController;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
-
+import SnakeController.Board;  
 public class Snake extends JFrame
 {
 	public Snake()
