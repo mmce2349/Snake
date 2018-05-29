@@ -40,7 +40,7 @@ public class Board extends JPanel implements ActionListener
 	private void createBoard()
 	{
 		addKeyListener(new TAdapter());
-		setBackground(Color.GRAY);
+		setBackground(Color.BLACK);
 		setFocusable(true);
 		setDoubleBuffered(true);
 		
