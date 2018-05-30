@@ -5,6 +5,7 @@ import java.awt.event.*;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import Resources.*;
 
 public class Board extends JPanel implements ActionListener
 {
@@ -89,7 +90,7 @@ public class Board extends JPanel implements ActionListener
 		{
 			game.drawImage(apple, appleX, appleY, this);
 			
-			for(int z=0; z < dots; z++)
+			for(int z = 0; z < dots; z++)
 			{
 				if(z==0) 
 				{
@@ -128,7 +129,7 @@ public class Board extends JPanel implements ActionListener
 			locateApple();
 		}
 	}
-	
+	//joint movement
 	private void move()
 	{
 		for(int z = dots; z > 0; z --)
@@ -156,7 +157,7 @@ public class Board extends JPanel implements ActionListener
 			y[0] += dotSize;
 		}
 	}
-	
+	//borders and self collision
 	private void checkCollision()
 	{
 		for (int z = dots; z > 0; z--)
@@ -188,10 +189,10 @@ public class Board extends JPanel implements ActionListener
 			gameTimer.stop();
 		}
 	}
-	
+	//randomly generate location of apple
 	private void locateApple()
 	{
-		int location = (int) (Math.random() *randomPosition);
+		int location = (int) (Math.random() * randomPosition);
 		appleX = ((location * dotSize));
 		
 		location = (int)(Math.random() * randomPosition);
